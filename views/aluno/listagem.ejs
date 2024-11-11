@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de alunos</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <!-- TEM QUE DESCOBRIR PQ O X APARECE NA ESQUERDA E NÃO NA DIREITA -->
+    <div class="container">
+        <h1>Listagem de alunos</h1>
+        <% if (status) { %>
+            <div class="alert alert-success alert-dimissible">
+                <button class="btn-close" data-bs-dismiss="alert"></button>
+                Cadastrado com <b>sucesso!</b>
+            </div>
+           <% } %>
+        <table class="table table-striped">
+            <tr>
+                <th>Nome</th>
+                <th>Matricula</th>
+                <th>Curso</th>
+                <th>Detalhar</th>
+            </tr>
+            <% alunos.forEach(aluno => { %>
+                <tr>
+                    <td> <%= aluno.nome %> </td>
+                    <td> <%= aluno.matricula %> </td>
+                    <td> <%= aluno.curso %> </td>
+                    <td> <a href="/alunos/<%= aluno.matricula %>">Detalhar</a></td>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
+
+
+
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>
