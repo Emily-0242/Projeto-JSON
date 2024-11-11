@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar Aluno</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <h1>Informações de <%= aluno.nome %></h1>
+
+    <div>
+        Nome: <%= aluno.nome %>
+    </div>
+
+    <div>
+        Matricula: <%= aluno.matricula %>
+    </div>
+
+    <div>
+        Curso: <%= aluno.curso %>
+    </div>
+    <br>
+    <div>
+        <a href="/alunos/"><button>Listagem</button></a>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

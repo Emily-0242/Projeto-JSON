@@ -1,0 +1,3 @@
+2KzuK0jWJJcBpXPM
+josejjonhson
+mongodb+srv://josejjonhson:2KzuK0jWJJcBpXPM@cluster0.6nmke.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
