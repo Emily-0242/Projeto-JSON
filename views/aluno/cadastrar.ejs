@@ -10,17 +10,18 @@
     
     <div class="container">
         <form action="/alunos" method="post">
+            <input type="hidden" name="_id" value="<%= aluno._id %>">
             <div>
                 <label for="inp_matricula" class="form-label">Matrícula</label> 
-                <input class="form-control" type="text" required placeholder="Sua matricula" name="inp_matricula">
+                <input value="<%= aluno.matricula%>" class="form-control" type="text" required placeholder="Sua matricula" name="inp_matricula">
             </div>
             <div>
                 <label for="inp_nome" class="form-label">Nome</label>
-                <input class="form-control" type="text" required placeholder="Seu nome" name="inp_nome">
+                <input value="<%= aluno.nome%>"class="form-control" type="text" required placeholder="Seu nome" name="inp_nome">
             </div>
             <div>
                 <label for="inp_curso" class="form-label">Curso</label>
-                <input class="form-control" type="text" required placeholder="Seu curso" name="inp_curso">
+                <input value="<%= aluno.curso%>" class="form-control" type="text" required placeholder="Seu curso" name="inp_curso">
             </div>
             <div>
                 <a class="btn btn-danger" href="/">Voltar</a>
