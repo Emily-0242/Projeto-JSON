@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="/usuarios" method="post">
+            <input type="hidden" name="_id" value="<%= usuario._id %>">
+            <div>
+                <label for="inp_nome" class="form-label">Nome</label>
+                <input value="<%= usuario.nome%>"class="form-control" type="text" required placeholder="Seu nome" name="inp_nome">
+            </div>
+            <div>
+                <label for="inp_email" class="form-label">Email</label>
+                <input value="<%= usuario.email%>"class="form-control" type="text" required placeholder="Seu E-mail" name="inp_email">
+            </div>
+            <div>
+                <label for="inp_cpf" class="form-label">CPF</label>
+                <input value="<%= usuario.cpf%>"class="form-control" type="text" required placeholder="Seu CPF" name="inp_cpf">
+            </div>
+            <div>
+                <label for="inp_senha" class="form-label">Senha</label>
+                <input value="<%= usuario.senha%>"class="form-control" type="text" required placeholder="Sua Senha" name="inp_senha">
+            </div>
+                <a class="btn btn-danger" href="/">Voltar</a>
+                <input class="btn btn-success" type="submit" value="Salvar">
+                
+            </div>
+        </form>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

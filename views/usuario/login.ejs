@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Login</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    
+    <div class="container">
+        <form action="/usuarios/login" method="post">
+            <div>
+                <label for="inp_email" class="form-label">Email</label>
+                <input class="form-control" type="text" required placeholder="Seu E-mail" name="inp_email">
+            </div>
+            <div>
+                <label for="inp_senha" class="form-label">Senha</label>
+                <input class="form-control" type="password" required placeholder="Sua Senha" name="inp_senha">
+            </div>
+                <a class="btn btn-danger" href="/">Voltar</a>
+                <input class="btn btn-success" type="submit" value="Logar">
+                
+            </div>
+        </form>
+    </div>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de usuarios</title>
+    
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <!-- TEM QUE DESCOBRIR PQ O X APARECE NA ESQUERDA E NÃO NA DIREITA -->
+    <div class="container">
+        <h1>Listagem de usuarios</h1>
+        <% if ( status == "1") { %>
+            <div class="alert alert-success alert-dismissible">
+                <button class="btn-close" data-bs-dismiss="alert"></button>
+                Cadastrado com <b>sucesso!</b>
+            </div>
+           <% } %>
+           <% if ( status == "2") { %>
+            <div class="alert alert-danger alert-dismissible">
+                <button class="btn-close" data-bs-dismiss="alert"></button>
+                Removido com <b>sucesso!</b>
+            </div>
+           <% } %>
+           <% if ( status == "3") { %>
+            <div class="alert alert-warning alert-dismissible">
+                <button class="btn-close" data-bs-dismiss="alert"></button>
+                Atualizado com <b>sucesso!</b>
+            </div>
+           <% } %>
+        <table class="table table-striped">
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>CPF</th>
+                <th>Senha</th>
+                <th>Detalhar</th>
+                <th>Excluir</th>
+                <th>Editar</th>
+            </tr>
+            <% usuarios.forEach(usuario => { %>
+                <tr>
+                    <td> <%= usuario.nome %> </td>
+                    <td> <%= usuario.email %> </td>
+                    <td> <%= usuario.cpf %> </td>
+                    <td> <%= usuario.senha %> </td>
+                    <td> <a href="/usuarios/<%= usuario.cpf %>"><button class="btn btn-info">Detalhar</button></a></td>
+                    <td><a href="/usuarios/remover/<%= usuario.cpf %>"><button class="btn btn-danger" onclick="return confirm('Você quer realmente excluir permanentemente este usuario?')">Remover</button></a></td>
+                    <td><a href="/usuarios/cadastrar/<%= usuario.cpf %>"><button class="btn btn-warning">Editar</button></a></td>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
+
+
+
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>
