@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Login</title>
-    <%- include("../partials/cabecalho.ejs") %>
+    <%- include("../partials/cabecalho_semenu.ejs") %>
 </head>
 <body>
     
     <div class="container">
+
         <form action="/usuarios/login" method="post">
             <div>
                 <label for="inp_email" class="form-label">Email</label>
@@ -23,7 +24,8 @@
                 
             </div>
         </form>
+        <a href="/usuarios/cadastrar"> Dseja se cadastrar? </a>
     </div>
-    <%- include("../partials/rodape.ejs") %>
+    <%- include("../partials/rodape.ejs") %>    
 </body>
 </html>

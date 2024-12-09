@@ -26,7 +26,7 @@ class usuarioController {
                 senha: req.body.inp_senha
             });
             await novousuario.save();
-            res.redirect("/usuarios?c=1");
+            res.redirect("/");
         }
        
     }
@@ -64,9 +64,16 @@ class usuarioController {
         if(usuario == null){
                 res.redirect("/usuarios/login?e=1")
         }else{
+            req.session.usuario =  req.body.inp_email;
             res.redirect("/");
         }
     }
+
+    static logout(req,res){
+        req.session.usuario = null;
+        res.redirect("/usuarios/login");
+    }
+
 }
 
 module.exports = usuarioController;
